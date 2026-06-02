@@ -176,8 +176,10 @@
     .divider {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 14px;
       margin: 28px auto;
+      width: 100%;
       opacity: 0;
       animation: fadeUp 1s 0.9s forwards;
     }
@@ -286,7 +288,7 @@
     }
 
     /* ── SHARED SECTION STYLES ────────────────── */
-    .section-header { text-align: center; margin-bottom: 56px; }
+    .section-header { text-align: center; margin-bottom: 36px; }
     .section-tag {
       font-family: 'Cormorant Garamond', serif;
       font-size: 11px;
@@ -311,7 +313,7 @@
 
     /* ── DETAILS ─────────────────────────────── */
     .details-section {
-      padding: 100px 20px;
+      padding: 60px 20px;
       background: var(--ivory);
     }
     .details-grid {
@@ -387,7 +389,41 @@
       line-height: 1.7;
     }
 
-    /* ── GANESHA ─────────────────────────────── */
+    /* ── WEDDING BANNER ─────────────────────── */
+    .wedding-banner {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto 24px;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .wedding-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 8px;
+    }
+
+
+    .ritual-anim {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: clamp(12px, 4vw, 28px);
+      margin-bottom: 24px;
+    }
+    .diya {
+      font-size: clamp(28px, 6vw, 42px);
+      display: inline-block;
+      animation: divaGlow 2s ease-in-out infinite alternate;
+    }
+    @keyframes divaGlow {
+      0%   { transform: scale(1) translateY(0px);   filter: brightness(1); }
+      50%  { transform: scale(1.15) translateY(-6px); filter: brightness(1.3) drop-shadow(0 0 8px #C9A96E); }
+      100% { transform: scale(1) translateY(0px);   filter: brightness(1); }
+    }
+
+
     .ganesha-wrap {
       display: flex;
       flex-direction: column;
@@ -409,13 +445,12 @@
 
     /* ── FAMILY INVITE SECTION ───────────────── */
     .family-section {
-      min-height: 100vh;
       background: var(--cream);
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 80px 24px;
+      padding: 48px 24px;
       position: relative;
       overflow: hidden;
     }
@@ -501,7 +536,7 @@
 
 
     .timeline-section {
-      padding: 100px 20px;
+      padding: 60px 20px;
       background: linear-gradient(160deg, #FDF3E7 0%, #F9EBF0 100%);
     }
     .timeline {
@@ -587,7 +622,7 @@
 
     /* ── VENUE ───────────────────────────────── */
     .venue-section {
-      padding: 100px 20px;
+      padding: 60px 20px;
       background: var(--ivory);
       text-align: center;
     }
@@ -647,7 +682,7 @@
 
     /* ── BLESSINGS ───────────────────────────── */
     .blessings-section {
-      padding: 100px 20px;
+      padding: 60px 20px;
       background: linear-gradient(160deg, #4E0F25 0%, #7B1C3C 100%);
       text-align: center;
     }
@@ -749,25 +784,98 @@
     }
 
     /* ── RESPONSIVE FIXES ───────────────────── */
-    * { max-width: 100%; }
-    img { max-width: 100%; height: auto; }
-    @media (max-width: 400px) {
-      .hero { padding: 80px 14px 60px; }
-      .hero::before, .hero::after { inset: 10px; }
-      .details-grid { grid-template-columns: 1fr; }
-      .countdown-grid { gap: 8px; }
-      .countdown-sep { font-size: 28px; padding-top: 10px; }
-      .family-section { padding: 60px 14px; }
-      .family-section::before, .family-section::after { inset: 12px; }
-      .venue-card { padding: 28px 16px; }
-      .rsvp-form { padding: 24px 14px; }
-      nav { padding: 12px 10px; gap: 12px; font-size: 9px; }
+    * { box-sizing: border-box; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* All screens — prevent overflow */
+    html, body { overflow-x: hidden; width: 100%; }
+
+    /* Tablets & large phones */
+    @media (max-width: 700px) {
+      nav { gap: 16px; padding: 12px 16px; }
+      nav a { font-size: 10px; letter-spacing: 2px; }
+      .hero { padding: 70px 20px 50px; }
+      .hero::before { inset: 14px; }
+      .hero::after  { inset: 20px; }
+      .family-section { padding: 50px 20px; }
+      .family-section::before { inset: 14px; }
+      .family-section::after  { inset: 20px; }
+      .family-corner.tl { top: 28px; left: 28px; }
+      .family-corner.tr { top: 28px; right: 28px; }
+      .family-corner.bl { bottom: 28px; left: 28px; }
+      .family-corner.br { bottom: 28px; right: 28px; }
+      .details-section  { padding: 48px 20px; }
+      .timeline-section { padding: 48px 20px; }
+      .venue-section    { padding: 48px 20px; }
+      .blessings-section{ padding: 48px 20px; }
+      .countdown-section{ padding: 40px 20px; }
+      footer            { padding: 40px 20px 28px; }
     }
+
+    /* Mobile phones */
     @media (max-width: 540px) {
+      nav { gap: 12px; padding: 10px 12px; }
+      nav a { font-size: 9px; letter-spacing: 1px; }
+
+      /* Hero */
+      .hero { padding: 60px 16px 40px; }
+      .hero::before { inset: 10px; }
+      .hero::after  { inset: 16px; }
+      .ganesha-wrap { margin-bottom: 16px; }
+      .ganesha-wrap svg, .ganesha-wrap img { width: clamp(90px, 28vw, 130px) !important; }
+      .couple span { white-space: normal; word-break: break-word; text-align: center; }
+      .monogram { margin-bottom: 16px; }
+      .divider { margin: 16px auto; }
+
+      /* Family section */
+      .family-section { padding: 44px 16px; }
+      .family-section::before { inset: 10px; }
+      .family-section::after  { inset: 16px; }
       .family-bride-groom { white-space: normal; word-break: break-word; }
-      .family-parents { white-space: normal; word-break: break-word; }
-      .details-grid { grid-template-columns: 1fr; max-width: 360px; }
-      .countdown-box { padding: 12px 14px; }
+      .family-parents     { white-space: normal; word-break: break-word; }
+      .family-names { font-size: clamp(26px, 8vw, 44px); }
+      .family-inner { width: 100%; }
+
+      /* Countdown */
+      .countdown-section { padding: 32px 12px; }
+      .countdown-label { margin-bottom: 20px; }
+      .countdown-grid { gap: 6px; justify-content: center; }
+      .countdown-box  { padding: 10px 12px; min-width: 56px; }
+      .countdown-number { font-size: clamp(28px, 8vw, 48px); }
+      .countdown-sep  { font-size: 24px; padding-top: 12px; }
+
+      /* Details */
+      .details-section { padding: 44px 16px; }
+      .details-grid { grid-template-columns: 1fr; max-width: 100%; }
+      .detail-card  { padding: 24px 16px; }
+      .section-header { margin-bottom: 24px; }
+
+      /* Timeline */
+      .timeline-section { padding: 44px 16px; }
+      .timeline { max-width: 100%; }
+      .timeline-item { margin-bottom: 28px; }
+
+      /* Venue */
+      .venue-section { padding: 44px 16px; }
+      .venue-card { padding: 24px 16px; max-width: 100%; }
+
+      /* Blessings */
+      .blessings-section { padding: 44px 16px; }
+      .blessing-text { margin-bottom: 16px; }
+
+      /* Footer */
+      footer { padding: 36px 16px 24px; }
+    }
+
+    /* Very small phones */
+    @media (max-width: 360px) {
+      nav a { font-size: 8px; letter-spacing: 1px; }
+      .hero { padding: 56px 12px 36px; }
+      .countdown-grid { gap: 4px; }
+      .countdown-box  { padding: 8px 10px; min-width: 48px; }
+      .countdown-sep  { font-size: 20px; padding-top: 10px; }
+      .family-section { padding: 40px 12px; }
+      .detail-card { padding: 20px 12px; }
     }
 
 
@@ -878,8 +986,6 @@
   </div>
 
   <div class="scroll-hint">
-    <span>Scroll</span>
-    <div class="scroll-arrow"></div>
   </div>
 </section>
 
@@ -891,9 +997,9 @@
   <span class="family-corner br">✦</span>
     <div class="family-inner reveal">
 
-    <div class="monogram" style="background:rgba(123,28,60,0.08); border-color:var(--maroon); margin-bottom:24px;"><span style="color:var(--maroon);">A ✦ S</span></div>
+    <div class="monogram" style="background:rgba(123,28,60,0.08); border-color:var(--maroon); margin-bottom:20px;"><span style="color:var(--maroon);">A ✦ S</span></div>
 
-    <p class="family-invite-text" style="margin-bottom:32px;">joyfully invite you to the wedding of their beloved children</p>
+    <p class="family-invite-text" style="margin-bottom:24px;">joyfully invite you to the wedding of their beloved children</p>
 
     <p class="family-bride-groom">Anjan Kumar Oruganti</p>
     <p class="family-parents">S/o Gopala Krishna Oruganti &amp; Manjula Oruganti</p>
@@ -967,7 +1073,6 @@
 <!-- ── SCHEDULE ──────────────────────────────────── -->
 <section class="timeline-section" id="schedule">
   <div class="section-header reveal">
-    <span class="section-tag">Programme</span>
     <h2 class="section-title">Wedding Schedule</h2>
     <div class="section-divider"><span></span><i>✦</i><span></span></div>
   </div>
