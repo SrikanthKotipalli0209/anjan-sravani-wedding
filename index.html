@@ -143,8 +143,8 @@
     .footer-monogram { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 4vw, 26px); color: var(--gold); letter-spacing: 6px; margin-bottom: 8px; }
     .footer-names { font-family: 'Playfair Display', serif; font-size: clamp(20px, 4vw, 32px); font-style: italic; color: var(--gold-pale); margin-bottom: 8px; line-height: 1.5; }
     .footer-date { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(232,213,163,0.6); margin-bottom: 20px; }
-    .footer-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px, 2vw, 16px); color: rgba(253,246,236,0.4); max-width: 440px; margin: 0 auto 24px; line-height: 1.9; }
-    .footer-copy { font-size: 10px; color: rgba(255,245,230,0.2); letter-spacing: 1px; }
+    .footer-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 2.8vw, 22px); color: rgba(253,246,236,0.4); max-width: 640px; margin: 0 auto 24px; line-height: 1.9; }
+    .footer-copy { font-size: 13px; color: rgba(232,213,163,0.75); letter-spacing: 1px; }
 
     /* RESPONSIVE */
     html, body { overflow-x: hidden; width: 100%; }
@@ -152,7 +152,7 @@
     @media (max-width: 700px) {
       nav { gap: 16px; padding: 12px 16px; }
       nav a { font-size: 10px; letter-spacing: 2px; }
-      .hero { padding: 70px 20px 50px; }
+      .hero { padding: 70px 20px 50px; justify-content: flex-start; }
       .family-section { padding: 0 20px 32px; }
       .family-corner.tl,.family-corner.bl { left: 28px; } .family-corner.tr,.family-corner.br { right: 28px; }
       .family-corner.tl,.family-corner.tr { top: 28px; } .family-corner.bl,.family-corner.br { bottom: 28px; }
@@ -160,7 +160,7 @@
     @media (max-width: 540px) {
       nav { gap: 12px; padding: 10px 12px; }
       nav a { font-size: 9px; letter-spacing: 1px; }
-      .hero { padding: 60px 16px 40px; }
+      .hero { padding: 60px 16px 40px; justify-content: flex-start; }
       .hero::before { inset: 10px; } .hero::after { inset: 16px; }
       .ganesha-wrap img { width: clamp(90px, 28vw, 130px) !important; }
       .couple span { white-space: normal; word-break: break-word; }
@@ -168,6 +168,7 @@
       .family-section { padding: 0 16px 28px; }
       .family-section::before { inset: 12px; } .family-section::after { inset: 18px; }
       .family-inner { padding-top: 55px !important; }
+      .family-invite-text { font-size: 11px; letter-spacing: 0px; }
       .family-bride-groom { white-space: normal; word-break: break-word; }
       .family-parents { white-space: normal; word-break: break-word; }
       .countdown-section { padding: 28px 12px; }
@@ -180,6 +181,7 @@
       .timeline-section,.venue-section,.blessings-section { padding: 36px 16px; }
       .venue-card { padding: 22px 14px; }
       footer { padding: 32px 16px 24px; }
+      .footer-quote { font-size: 13px; }
     }
     @media (max-width: 360px) {
       .hero { padding: 56px 12px 36px; }
@@ -484,7 +486,7 @@
   <p class="footer-monogram">A ✦ S</p>
   <p class="footer-names">Anjan Kumar Oruganti<br/>&amp;<br/>Sravani Hanumanthu</p>
   <p class="footer-date">16 · 08 · 2026 &nbsp;|&nbsp; Visakhapatnam</p>
-  <p class="footer-quote">"A successful marriage requires falling in love many times, always with the same person."</p>
+  <p class="footer-quote">"A successful marriage requires falling in love many times,<br>always with the same person."</p>
   <p class="footer-copy" style="margin-bottom:20px;">With love · Anjan &amp; Sravani · 2026</p>
   <div style="padding-top:20px;border-top:1px solid rgba(201,169,110,0.2);">
     <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Contact</p>
