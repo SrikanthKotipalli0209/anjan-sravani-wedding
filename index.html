@@ -81,7 +81,7 @@
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 100px 24px 80px;
+      padding: 60px 24px 80px;
       position: relative;
       overflow: hidden;
     }
@@ -244,11 +244,12 @@
     }
     .countdown-label {
       font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(12px, 2vw, 14px);
-      letter-spacing: 5px;
+      font-size: clamp(10px, 2.5vw, 14px);
+      letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gold);
       margin-bottom: 36px;
+      white-space: nowrap;
     }
     .countdown-grid {
       display: flex;
@@ -428,7 +429,8 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 28px;
+      margin-top: 0;
+      margin-bottom: 20px;
       opacity: 0;
       animation: fadeUp 1s 0.1s forwards;
     }
@@ -1058,16 +1060,41 @@
       <p class="detail-sub">Sunday<br/>Auspicious Day</p>
     </div>
     <div class="detail-card reveal">
-      <span class="detail-icon">🕛</span>
-      <span class="detail-label">Muhurtham</span>
-      <p class="detail-main">12:18 AM</p>
-      <p class="detail-sub">Early hours of 17th Aug</p>
+      <span class="detail-icon" style="font-size:42px; display:block;">
+        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" style="width:52px;height:52px;margin:0 auto;display:block;">
+          <!-- Face -->
+          <circle cx="50" cy="50" r="44" fill="#FDF8F0" stroke="#7B1C3C" stroke-width="3"/>
+          <!-- Hour markers -->
+          <line x1="50" y1="8"  x2="50" y2="17" stroke="#7B1C3C" stroke-width="2.5"/>
+          <line x1="92" y1="50" x2="83" y2="50" stroke="#7B1C3C" stroke-width="2.5"/>
+          <line x1="50" y1="92" x2="50" y2="83" stroke="#7B1C3C" stroke-width="2.5"/>
+          <line x1="8"  y1="50" x2="17" y2="50" stroke="#7B1C3C" stroke-width="2.5"/>
+          <!-- Minor markers -->
+          <line x1="74" y1="13" x2="70" y2="20" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="87" y1="26" x2="80" y2="30" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="87" y1="74" x2="80" y2="70" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="74" y1="87" x2="70" y2="80" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="26" y1="87" x2="30" y2="80" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="13" y1="74" x2="20" y2="70" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="13" y1="26" x2="20" y2="30" stroke="#C9A96E" stroke-width="1.5"/>
+          <line x1="26" y1="13" x2="30" y2="20" stroke="#C9A96E" stroke-width="1.5"/>
+          <!-- Hour hand at 12:18 → 9° from 12 -->
+          <line x1="50" y1="50" x2="53" y2="30" stroke="#2C1810" stroke-width="4" stroke-linecap="round"/>
+          <!-- Minute hand at 18 min → 108° -->
+          <line x1="50" y1="50" x2="80" y2="60" stroke="#7B1C3C" stroke-width="2.5" stroke-linecap="round"/>
+          <!-- Center -->
+          <circle cx="50" cy="50" r="4" fill="#7B1C3C"/>
+        </svg>
+      </span>
+      <span class="detail-label" style="margin-top:12px; display:block;">Muhurtham</span>
+      <p class="detail-main" style="text-align:center;">12:18 AM</p>
+      <p class="detail-sub" style="text-align:center;">Early hours of 17th Aug</p>
     </div>
     <div class="detail-card reveal">
-      <span class="detail-icon">📍</span>
-      <span class="detail-label">Venue</span>
-      <p class="detail-main">Sri Lalitha Kalyana Mandapam</p>
-      <p class="detail-sub">Seethammadara<br/>Visakhapatnam 530013</p>
+      <span class="detail-icon" style="font-size:42px;">🍽️</span>
+      <span class="detail-label">Dinner</span>
+      <p class="detail-main" style="text-align:center;">16 August 2026</p>
+      <p class="detail-sub" style="text-align:center;">7:00 PM onwards</p>
     </div>
   </div>
 </section>
