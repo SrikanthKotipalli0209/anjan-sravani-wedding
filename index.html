@@ -57,10 +57,10 @@
     /* PETALS */
     #petals { position: fixed; inset: 0; pointer-events: none; z-index: 3; overflow: hidden; }
     .petal { position: absolute; top: -40px; border-radius: 50% 0 50% 0; opacity: 0; animation: fall linear infinite; }
-    @keyframes fall { 0% { opacity: 0; transform: translateY(0) rotate(0deg); } 10% { opacity: 0.85; } 90% { opacity: 0.5; } 100% { opacity: 0; transform: translateY(110vh) rotate(720deg); } }
+    @keyframes fall { 0% { opacity: 0; transform: translateY(0) rotate(0deg); } 10% { opacity: 0.65; } 90% { opacity: 0.35; } 100% { opacity: 0; transform: translateY(110vh) rotate(720deg); } }
 
     /* HERO */
-    .hero { min-height: 100vh; background: linear-gradient(175deg, #4E0F25 0%, #7B1C3C 40%, #9B3050 70%, #C97B8A 100%); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 10px 24px 50px; position: relative; overflow: hidden; }
+    .hero { min-height: 100vh; background: linear-gradient(175deg, #4E0F25 0%, #7B1C3C 40%, #9B3050 70%, #C97B8A 100%); display: flex; flex-direction: column; align-items: center; justify-content: flex-start; text-align: center; padding: clamp(80px,15vh,160px) 24px 0; position: relative; overflow: hidden; }
     .mandala-bg { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; pointer-events: none; }
     .mandala-bg svg { width: min(700px, 100vw); height: min(700px, 100vw); opacity: 0.07; }
     .hero::before { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(201,169,110,0.25); pointer-events: none; }
@@ -77,8 +77,8 @@
     .divider-line { width: clamp(50px, 10vw, 110px); height: 1px; background: linear-gradient(to right, transparent, var(--gold)); }
     .divider-line.r { background: linear-gradient(to left, transparent, var(--gold)); }
     .divider-lotus { color: var(--gold); font-size: 18px; }
-    .wedding-date { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px, 3vw, 22px); font-weight: 300; letter-spacing: 4px; color: var(--gold-light); opacity: 0; animation: fadeUp 1s 1.1s forwards; }
-    .hero-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2vw, 18px); color: rgba(255,245,230,0.65); margin-top: 14px; opacity: 0; animation: fadeUp 1s 1.3s forwards; }
+    .wedding-date { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px, 3vw, 22px); font-weight: 300; letter-spacing: 4px; color: #FFFFFF; opacity: 0; animation: fadeUp 1s 1.1s forwards; }
+    .hero-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2vw, 18px); color: rgba(255,255,255,0.90); margin-top: 14px; opacity: 0; animation: fadeUp 1s 1.3s forwards; }
     .scroll-hint { position: absolute; bottom: 32px; width: 100%; left: 0; text-align: center; opacity: 0; animation: fadeUp 1s 1.8s forwards; display: flex; flex-direction: column; align-items: center; justify-content: center; }
     .scroll-arrow { width: 18px; height: 18px; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(45deg); animation: bounce 1.8s infinite; }
 
@@ -276,7 +276,7 @@
     .splash-om { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,3vw,16px); letter-spacing: 3px; color: var(--gold-light); opacity: 0.85; margin-bottom: 18px; }
     .splash-names { font-family: 'Playfair Display', serif; font-size: clamp(26px,6vw,52px); color: #FFF5E6; line-height: 1.2; margin-bottom: 6px; }
     .splash-amp { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(28px,5vw,44px); color: var(--gold); display: block; margin: 4px 0; }
-    .splash-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,2.5vw,17px); color: rgba(255,245,230,0.6); letter-spacing: 2px; margin-bottom: 36px; }
+    .splash-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,2.5vw,17px); color: rgba(255,255,255,0.95); letter-spacing: 2px; margin-bottom: 36px; }
     #splash-btn {
       display: inline-flex; align-items: center; gap: 10px;
       padding: 15px 36px;
@@ -493,8 +493,12 @@
     </div>
     <p class="wedding-date" style="opacity:1;">Sunday · 16 August 2026</p>
     <p class="hero-sub" style="opacity:1;">Sri Lalitha Kalyana Mandapam · Visakhapatnam</p>
-    <div style="margin-top:5em; display:flex; justify-content:center;">
+    <div style="margin-top:5em; margin-bottom:0; display:flex; justify-content:center;">
       <img src="hand-in-hand.png" alt="Hands" style="width:clamp(280px,60vw,500px);height:auto;display:block;margin:0 auto;opacity:0;animation:fadeUp 1s 1.6s forwards;"/>
+    </div>
+    <div style="margin-top:2.5em; margin-bottom:2.5em; display:flex; flex-direction:column; align-items:center; gap:8px; opacity:0; animation:fadeUp 1s 2s forwards;">
+      <p style="font-family:'Cormorant Garamond',serif; font-size:13px; letter-spacing:3px; text-transform:uppercase; color:var(--gold); margin:0;">Scroll Down</p>
+      <div style="width:16px; height:16px; border-right:1.5px solid var(--gold); border-bottom:1.5px solid var(--gold); transform:rotate(45deg); animation:bounce 1.8s infinite;"></div>
     </div>
   </div>
 </section>
@@ -511,7 +515,7 @@
   <div class="family-inner reveal" style="padding-top: clamp(100px, 22vw, 280px)">
 
     <div class="monogram" style="margin-bottom:20px;margin-left:auto;margin-right:auto;">
-      <img src="A&S.png" alt="A & S monogram" style="width:clamp(100px,18vw,150px);height:auto;display:block;margin:0 auto;"/>
+      <img src="A&S.png" alt="A & S monogram" style="width:clamp(150px,25vw,280px);height:auto;display:block;margin:0 auto;"/>
     </div>
 
     <p class="family-invite-text" style="margin-bottom:20px;">joyfully invite you to the wedding of their beloved children</p>
@@ -774,13 +778,13 @@
   function createPetal() {
     const p = document.createElement('div');
     p.className = 'petal';
-    const size = 10 + Math.random() * 14;
-    p.style.cssText = `left:${Math.random()*100}vw;width:${size}px;height:${size*1.4}px;background:${colors[Math.floor(Math.random()*colors.length)]};opacity:0;animation-duration:${6+Math.random()*8}s;animation-delay:${Math.random()*4}s;`;
+    const size = 6 + Math.random() * 8;
+    p.style.cssText = `left:${Math.random()*100}vw;width:${size}px;height:${size*1.4}px;background:${colors[Math.floor(Math.random()*colors.length)]};opacity:0;animation-duration:${8+Math.random()*10}s;animation-delay:${Math.random()*6}s;`;
     pc.appendChild(p);
-    setTimeout(() => p.remove(), 14000);
+    setTimeout(() => p.remove(), 18000);
   }
-  setInterval(createPetal, 400);
-  for (let i = 0; i < 14; i++) createPetal();
+  setInterval(createPetal, 700);
+  for (let i = 0; i < 9; i++) createPetal();
 
   // Splash screen + audio — tap "Open Invitation" to enter and start music
   const audio = document.getElementById('bg-audio');
