@@ -3,21 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="color-scheme" content="light" />
   <title>Anjan & Sravani · Wedding Invitation</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
-      color-scheme: light;
       --maroon: #7B1C3C; --maroon-deep: #4E0F25;
       --gold: #C9A96E; --gold-light: #E8D5A3; --gold-pale: #F5ECD7;
       --cream: #FDF6EC; --ivory: #FFFDF8;
       --brown: #2C1810; --mocha: #7A4F3A; --rose: #C97B8A;
-    }
-    @media (prefers-color-scheme: dark) {
-      :root { color-scheme: light; }
-      html, body { background: #FDF6EC !important; color: #2C1810 !important; }
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--brown); overflow-x: hidden; }
@@ -89,16 +83,16 @@
     .detail-sub { font-family: 'Cormorant Garamond', serif; font-size: clamp(13px, 2vw, 16px); color: var(--mocha); line-height: 1.7; }
 
     /* FAMILY SECTION */
-    .family-section { background: var(--cream); min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 24px 32px; position: relative; overflow: hidden; }
+    .family-section { background: #2A2200; min-height: 100vh; display: flex; align-items: center; justify-content: center; text-align: center; padding: 0 24px 32px; position: relative; overflow: hidden; }
     .family-section::before { content: ''; position: absolute; inset: 24px; border: 1px solid rgba(201,169,110,0.3); pointer-events: none; z-index: 0; }
     .family-section::after { content: ''; position: absolute; inset: 30px; border: 1px solid rgba(201,169,110,0.12); pointer-events: none; z-index: 0; }
     .family-inner { position: relative; z-index: 1; max-width: 580px; width: 100%; text-align: center; }
     .family-corner { position: absolute; color: var(--gold); font-size: 22px; opacity: 0.45; }
     .family-corner.tl { top: 48px; left: 48px; } .family-corner.tr { top: 48px; right: 48px; }
     .family-corner.bl { bottom: 48px; left: 48px; } .family-corner.br { bottom: 48px; right: 48px; }
-    .family-invite-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 4vw, 20px); font-weight: 400; color: #6B0F2A; margin-top: 10px; font-style: italic; letter-spacing: 1px; white-space: normal; word-break: break-word; text-align: center; padding: 0 8px; }
-    .family-bride-groom { font-family: 'Playfair Display', serif; font-size: clamp(26px, 6vw, 48px); font-weight: 600; color: #6B0F2A; line-height: 1.2; margin-bottom: 4px; }
-    .family-parents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2.5vw, 18px); color: #5C3A28; line-height: 1.6; }
+    .family-invite-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 4vw, 20px); font-weight: 400; color: var(--gold-light); margin-top: 10px; font-style: italic; letter-spacing: 1px; white-space: normal; word-break: break-word; text-align: center; padding: 0 8px; }
+    .family-bride-groom { font-family: 'Playfair Display', serif; font-size: clamp(26px, 6vw, 48px); font-weight: 600; color: var(--gold-pale); line-height: 1.2; margin-bottom: 4px; }
+    .family-parents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2.5vw, 18px); color: var(--gold-light); line-height: 1.6; }
     .family-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 20px auto; }
     .family-divider span { height: 1px; width: 70px; background: var(--gold); display: block; opacity: 0.6; }
     .family-divider i { color: var(--gold); font-style: normal; font-size: 16px; }
@@ -149,8 +143,8 @@
     .footer-monogram { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 4vw, 26px); color: var(--gold); letter-spacing: 6px; margin-bottom: 8px; }
     .footer-names { font-family: 'Playfair Display', serif; font-size: clamp(20px, 4vw, 32px); font-style: italic; color: var(--gold-pale); margin-bottom: 8px; line-height: 1.5; }
     .footer-date { font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: rgba(232,213,163,0.6); margin-bottom: 20px; }
-    .footer-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(16px, 2.8vw, 22px); color: rgba(253,246,236,0.4); max-width: 640px; margin: 0 auto 24px; line-height: 1.9; }
-    .footer-copy { font-size: 13px; color: rgba(232,213,163,0.75); letter-spacing: 1px; }
+    .footer-quote { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px, 2vw, 16px); color: rgba(253,246,236,0.4); max-width: 440px; margin: 0 auto 24px; line-height: 1.9; }
+    .footer-copy { font-size: 10px; color: rgba(255,245,230,0.2); letter-spacing: 1px; }
 
     /* RESPONSIVE */
     html, body { overflow-x: hidden; width: 100%; }
@@ -158,23 +152,21 @@
     @media (max-width: 700px) {
       nav { gap: 16px; padding: 12px 16px; }
       nav a { font-size: 10px; letter-spacing: 2px; }
-      .hero { padding: 70px 20px 50px; justify-content: flex-start; }
-      .family-section { padding: 0 20px 32px; }
+      .hero { padding: 70px 20px 50px; }
+      .family-section { padding: 40px 20px; }
       .family-corner.tl,.family-corner.bl { left: 28px; } .family-corner.tr,.family-corner.br { right: 28px; }
       .family-corner.tl,.family-corner.tr { top: 28px; } .family-corner.bl,.family-corner.br { bottom: 28px; }
     }
     @media (max-width: 540px) {
       nav { gap: 12px; padding: 10px 12px; }
       nav a { font-size: 9px; letter-spacing: 1px; }
-      .hero { padding: 60px 16px 40px; justify-content: flex-start; }
+      .hero { padding: 60px 16px 40px; }
       .hero::before { inset: 10px; } .hero::after { inset: 16px; }
       .ganesha-wrap img { width: clamp(90px, 28vw, 130px) !important; }
       .couple span { white-space: normal; word-break: break-word; }
       .divider { margin: 16px auto; }
-      .family-section { padding: 0 16px 28px; }
+      .family-section { padding: 28px 16px; }
       .family-section::before { inset: 12px; } .family-section::after { inset: 18px; }
-      .family-inner { padding-top: 55px !important; }
-      .family-invite-text { font-size: 11px; letter-spacing: 0px; }
       .family-bride-groom { white-space: normal; word-break: break-word; }
       .family-parents { white-space: normal; word-break: break-word; }
       .countdown-section { padding: 28px 12px; }
@@ -187,7 +179,6 @@
       .timeline-section,.venue-section,.blessings-section { padding: 36px 16px; }
       .venue-card { padding: 22px 14px; }
       footer { padding: 32px 16px 24px; }
-      .footer-quote { font-size: 13px; }
     }
     @media (max-width: 360px) {
       .hero { padding: 56px 12px 36px; }
@@ -199,108 +190,9 @@
     @keyframes bounce { 0%,100% { transform: rotate(45deg) translateY(0); } 50% { transform: rotate(45deg) translateY(7px); } }
     .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.85s ease, transform 0.85s ease; }
     .reveal.visible { opacity: 1; transform: translateY(0); }
-
-    /* SPLASH SCREEN */
-    #splash {
-      position: fixed; inset: 0; z-index: 9999;
-      background: linear-gradient(175deg, #4E0F25 0%, #7B1C3C 45%, #9B3050 80%, #C97B8A 100%);
-      display: flex; flex-direction: column; align-items: center; justify-content: center;
-      text-align: center; padding: 32px;
-      transition: opacity 0.8s ease, visibility 0.8s ease;
-    }
-    #splash.hidden { opacity: 0; visibility: hidden; pointer-events: none; }
-    #splash::before { content: ''; position: absolute; inset: 20px; border: 1px solid rgba(201,169,110,0.3); pointer-events: none; }
-    #splash::after  { content: ''; position: absolute; inset: 26px; border: 1px solid rgba(201,169,110,0.12); pointer-events: none; }
-    .splash-om { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,3vw,16px); letter-spacing: 3px; color: var(--gold-light); opacity: 0.85; margin-bottom: 18px; }
-    .splash-names { font-family: 'Playfair Display', serif; font-size: clamp(26px,6vw,52px); color: #FFF5E6; line-height: 1.2; margin-bottom: 6px; }
-    .splash-amp { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(28px,5vw,44px); color: var(--gold); display: block; margin: 4px 0; }
-    .splash-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(13px,2.5vw,17px); color: rgba(255,245,230,0.6); letter-spacing: 2px; margin-bottom: 36px; }
-    #splash-btn {
-      display: inline-flex; align-items: center; gap: 10px;
-      padding: 15px 36px;
-      background: transparent;
-      border: 1.5px solid var(--gold);
-      color: var(--gold-light);
-      font-family: 'Cormorant Garamond', serif;
-      font-size: clamp(14px,3vw,18px);
-      letter-spacing: 4px;
-      cursor: pointer;
-      border-radius: 2px;
-      transition: background 0.3s, color 0.3s;
-      -webkit-tap-highlight-color: transparent;
-    }
-    #splash-btn:hover, #splash-btn:active { background: rgba(201,169,110,0.15); color: #fff; }
-
-    /* AUDIO PLAYER */
-    #audio-btn {
-      position: fixed;
-      bottom: 28px;
-      right: 28px;
-      z-index: 999;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--maroon-deep), var(--maroon));
-      border: 2px solid var(--gold);
-      box-shadow: 0 4px 20px rgba(78,15,37,0.5);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: transform 0.2s, box-shadow 0.2s;
-      outline: none;
-    }
-    #audio-btn:hover { transform: scale(1.1); box-shadow: 0 6px 28px rgba(78,15,37,0.7); }
-    #audio-btn svg { width: 22px; height: 22px; fill: var(--gold-light); transition: opacity 0.2s; }
-    #audio-btn .icon-pause { display: none; }
-    #audio-btn.playing .icon-play  { display: none; }
-    #audio-btn.playing .icon-pause { display: block; }
-    @keyframes pulse-ring {
-      0%   { transform: scale(1);   opacity: 0.6; }
-      100% { transform: scale(1.6); opacity: 0; }
-    }
-    #audio-btn.playing::after {
-      content: '';
-      position: absolute;
-      inset: -4px;
-      border-radius: 50%;
-      border: 2px solid var(--gold);
-      animation: pulse-ring 1.8s ease-out infinite;
-      pointer-events: none;
-    }
-    @media (max-width: 540px) {
-      #audio-btn { bottom: 18px; right: 18px; width: 46px; height: 46px; }
-    }
   </style>
 </head>
 <body>
-
-<!-- SPLASH SCREEN — tap to enter & start music -->
-<div id="splash">
-  <p class="splash-om">ॐ Om Sree Ganeshaya Namah ॐ</p>
-  <p class="splash-names">
-    Anjan Kumar
-    <span class="splash-amp">&amp;</span>
-    Sravani
-  </p>
-  <p class="splash-sub">Wedding Invitation · 16 August 2026</p>
-  <button id="splash-btn">✿ &nbsp; Open Invitation &nbsp; ✿</button>
-</div>
-
-<audio id="bg-audio" loop preload="auto">
-  <source src="wedding-music.mp3" type="audio/mpeg">
-</audio>
-
-<button id="audio-btn" aria-label="Toggle music" title="Toggle background music">
-  <!-- Play icon -->
-  <svg class="icon-play" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M8 5v14l11-7z"/>
-  </svg>
-  <!-- Pause icon -->
-  <svg class="icon-pause" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-  </svg>
-</button>
 
 <div id="petals"></div>
 
@@ -389,8 +281,9 @@
   <span class="family-corner tr">✦</span>
   <span class="family-corner bl">✦</span>
   <span class="family-corner br">✦</span>
+  
 
-  <img src="garland.png" alt="Flower Garland" style="position:absolute;top:clamp(-110px,-9vw,-20px);left:0;width:100%;height:auto;z-index:2;display:block;"/>
+  <img src="ChatGPT%20Image%20Jun%202%2C%202026%2C%2005_50_34%20PM.png" alt="Flower Garland" style="position:absolute;top:-1px;left:0;width:100%;height:auto;z-index:2;display:block;"/>
 
   <div class="family-inner reveal" style="padding-top: clamp(100px, 22vw, 280px)">
 
@@ -591,7 +484,7 @@
   <p class="footer-monogram">A ✦ S</p>
   <p class="footer-names">Anjan Kumar Oruganti<br/>&amp;<br/>Sravani Hanumanthu</p>
   <p class="footer-date">16 · 08 · 2026 &nbsp;|&nbsp; Visakhapatnam</p>
-  <p class="footer-quote">"A successful marriage requires falling in love many times,<br>always with the same person."</p>
+  <p class="footer-quote">"A successful marriage requires falling in love many times, always with the same person."</p>
   <p class="footer-copy" style="margin-bottom:20px;">With love · Anjan &amp; Sravani · 2026</p>
   <div style="padding-top:20px;border-top:1px solid rgba(201,169,110,0.2);">
     <p style="font-family:'Cormorant Garamond',serif;font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;">Contact</p>
@@ -642,27 +535,6 @@
   }
   setInterval(createPetal, 600);
   for (let i = 0; i < 8; i++) createPetal();
-
-  // Splash screen + audio — tap "Open Invitation" to enter and start music
-  const audio = document.getElementById('bg-audio');
-  const audioBtn = document.getElementById('audio-btn');
-  const splash = document.getElementById('splash');
-  const splashBtn = document.getElementById('splash-btn');
-
-  splashBtn.addEventListener('click', () => {
-    splash.classList.add('hidden');
-    audio.play().then(() => audioBtn.classList.add('playing')).catch(() => {});
-  });
-
-  audioBtn.addEventListener('click', (e) => {
-    e.stopPropagation();
-    if (audio.paused) {
-      audio.play().then(() => audioBtn.classList.add('playing')).catch(() => {});
-    } else {
-      audio.pause();
-      audioBtn.classList.remove('playing');
-    }
-  });
 </script>
 </body>
 </html>
