@@ -13,7 +13,7 @@
       --maroon: #7B1C3C; --maroon-deep: #4E0F25;
       --gold: #C9A96E; --gold-light: #E8D5A3; --gold-pale: #F5ECD7;
       --cream: #FDF6EC; --ivory: #FFFDF8;
-      --brown: #2C1810; --mocha: #7A4F3A; --rose: #C97B8A;
+      --brown: #2C1810; --mocha: #7A4F3A;
     }
     @media (prefers-color-scheme: dark) {
       :root { color-scheme: light; }
@@ -24,7 +24,6 @@
 
     /* NAV */
     nav { position: absolute; top: 20px; left: 0; right: 0; z-index: 100; padding: 16px 32px; display: flex; justify-content: center; gap: clamp(20px, 4vw, 56px); transition: background 0.4s, box-shadow 0.4s; }
-    nav.scrolled { background: rgba(78,15,37,0.95); backdrop-filter: blur(8px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
     nav a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
     nav a:hover { opacity: 1; }
 
@@ -50,10 +49,6 @@
     @media (max-width: 375px) {
       .corner-orn { width: 45px; max-width: 90%; max-height: 90%; }
     }
-    /* smaller corners for compact sections */
-    .countdown-section .corner-orn,
-    .contact-section .corner-orn { width: 55px; max-width: 90%; max-height: 90%; }
-
     /* PETALS */
     #petals { position: fixed; inset: 0; pointer-events: none; z-index: 3; overflow: hidden; }
     .petal { position: absolute; top: -40px; border-radius: 50% 0 50% 0; opacity: 0; animation: fall linear infinite; }
@@ -79,8 +74,6 @@
     .divider-lotus { color: var(--gold); font-size: 18px; }
     .wedding-date { font-family: 'Cormorant Garamond', serif; font-size: clamp(15px, 3vw, 22px); font-weight: 300; letter-spacing: 4px; color: #FFFFFF; opacity: 0; animation: fadeUp 1s 1.1s forwards; }
     .hero-sub { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2vw, 18px); color: rgba(255,255,255,0.90); margin-top: 14px; opacity: 0; animation: fadeUp 1s 1.3s forwards; }
-    .scroll-hint { position: absolute; bottom: 32px; width: 100%; left: 0; text-align: center; opacity: 0; animation: fadeUp 1s 1.8s forwards; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-    .scroll-arrow { width: 18px; height: 18px; border-right: 1.5px solid var(--gold); border-bottom: 1.5px solid var(--gold); transform: rotate(45deg); animation: bounce 1.8s infinite; }
 
     /* COUNTDOWN */
     .countdown-section { background: var(--brown); padding: 36px 20px; text-align: center; position: relative; }
@@ -567,7 +560,6 @@
 </section>
 
 <!-- DETAILS -->
-<!-- DETAILS -->
 <section class="details-section" id="details">
   <div class="border-frame"><span></span><span></span><span></span><span></span></div>
   <div class="section-header reveal">
@@ -743,8 +735,6 @@
 </section>
 
 <script>
-  const nav = document.getElementById('main-nav');
-
   const weddingDate = new Date('2026-08-17T00:18:00');
   function updateCountdown() {
     const diff = weddingDate - new Date();
