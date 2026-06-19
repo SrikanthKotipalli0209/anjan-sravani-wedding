@@ -23,7 +23,7 @@
     body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--brown); overflow-x: hidden; position: relative; }
 
     /* NAV */
-    nav { position: fixed; top: 20px; left: 0; right: 0; z-index: 100; padding: 16px 32px; display: flex; justify-content: center; gap: clamp(20px, 4vw, 56px); transition: background 0.4s, box-shadow 0.4s; }
+    nav { position: absolute; top: 20px; left: 0; right: 0; z-index: 100; padding: 16px 32px; display: flex; justify-content: center; gap: clamp(20px, 4vw, 56px); transition: background 0.4s, box-shadow 0.4s; }
     nav.scrolled { background: rgba(78,15,37,0.95); backdrop-filter: blur(8px); box-shadow: 0 2px 20px rgba(0,0,0,0.3); }
     nav a { font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold-light); text-decoration: none; opacity: 0.75; transition: opacity 0.2s; }
     nav a:hover { opacity: 1; }
@@ -155,7 +155,7 @@
     .family-corner { position: absolute; color: var(--gold); font-size: 22px; opacity: 0.45; }
     .family-corner.tl { top: 48px; left: 48px; } .family-corner.tr { top: 48px; right: 48px; }
     .family-corner.bl { bottom: 48px; left: 48px; } .family-corner.br { bottom: 48px; right: 48px; }
-    .family-invite-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(14px, 4vw, 20px); font-weight: 400; color: #6B0F2A; margin-top: 10px; font-style: italic; letter-spacing: 1px; white-space: normal; word-break: break-word; text-align: center; padding: 0 8px; }
+    .family-invite-text { font-family: 'Cormorant Garamond', serif; font-size: clamp(11px, 3vw, 22px); font-weight: 400; color: #6B0F2A; margin-top: 10px; font-style: italic; letter-spacing: 0.5px; white-space: nowrap; text-align: center; padding: 0 8px; }
     .family-bride-groom { font-family: 'Playfair Display', serif; font-size: clamp(26px, 6vw, 48px); font-weight: 600; color: #6B0F2A; line-height: 1.2; margin-bottom: 4px; }
     .family-parents { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: clamp(14px, 2.5vw, 18px); color: #5C3A28; line-height: 1.6; }
     .family-divider { display: flex; align-items: center; justify-content: center; gap: 16px; margin: 20px auto; }
@@ -233,7 +233,7 @@
       .family-section { padding: 0 16px 28px; }
       .family-section::before { inset: 12px; } .family-section::after { inset: 18px; }
       .family-inner { padding-top: 55px !important; }
-      .family-invite-text { font-size: 11px; letter-spacing: 0px; }
+      .family-invite-text { font-size: clamp(11px, 3vw, 16px); letter-spacing: 0px; white-space: nowrap; }
       .family-bride-groom { white-space: normal; word-break: break-word; }
       .family-parents { white-space: normal; word-break: break-word; }
       .countdown-section { padding: 28px 12px; }
@@ -518,7 +518,7 @@
       <img src="A&S.png" alt="A & S monogram" style="width:clamp(150px,25vw,280px);height:auto;display:block;margin:0 auto;"/>
     </div>
 
-    <p class="family-invite-text" style="margin-bottom:20px;">joyfully invite you to the wedding of their beloved children</p>
+    <p class="family-invite-text" style="margin-bottom:20px;">The two families, with great joy announce the wedding of their cherished children</p>
 
     <p class="family-bride-groom">Anjan Kumar Oruganti</p>
     <p class="family-parents">S/o Gopala Krishna Oruganti &amp; Manjula Oruganti</p>
@@ -744,7 +744,6 @@
 
 <script>
   const nav = document.getElementById('main-nav');
-  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60));
 
   const weddingDate = new Date('2026-08-17T00:18:00');
   function updateCountdown() {
