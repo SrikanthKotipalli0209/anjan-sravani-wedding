@@ -797,6 +797,14 @@
       audioBtn.classList.remove('playing');
     }
   });
+
+  // Pause music when page is hidden (tab switch, home button, other apps)
+  document.addEventListener('visibilitychange', () => {
+    if (document.hidden) {
+      audio.pause();
+      audioBtn.classList.remove('playing');
+    }
+  });
 </script>
 </body>
 </html>
